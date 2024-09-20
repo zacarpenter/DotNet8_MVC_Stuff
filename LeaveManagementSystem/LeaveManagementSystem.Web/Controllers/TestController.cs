@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LeaveManagementSystem.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LeaveManagementSystem.Web.Controllers
 {
@@ -6,7 +7,12 @@ namespace LeaveManagementSystem.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var data = new TestViewModel
+            {
+                Name = "test",
+                DateOfBirth = new DateTime(1992, 08, 10, 23, 59, 0),
+            };
+            return View(data);
         }
     }
 }
